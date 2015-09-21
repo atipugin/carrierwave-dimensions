@@ -39,7 +39,9 @@ module CarrierWave
                 dimensions[1] <= max_dimensions[1]
 
       fail CarrierWave::IntegrityError,
-           I18n.translate('errors.messages.max_dimensions_error')
+           I18n.translate('errors.messages.max_dimensions_error',
+                          max_width: max_dimensions[0],
+                          max_height: max_dimensions[1])
     end
 
     def check_min_dimensions!(dimensions)
@@ -47,7 +49,9 @@ module CarrierWave
                 dimensions[1] >= min_dimensions[1]
 
       fail CarrierWave::IntegrityError,
-           I18n.translate('errors.messages.min_dimensions_error')
+           I18n.translate('errors.messages.min_dimensions_error',
+                          min_width: min_dimensions[0],
+                          min_height: min_dimensions[1])
     end
   end
 end

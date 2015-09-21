@@ -1,5 +1,5 @@
 en:
   errors:
     messages:
-      max_dimensions_error: Too large
-      min_dimensions_error: Too small
+      max_dimensions_error: Image is too large (maximum is %{max_width}x%{max_height})
+      min_dimensions_error: Image is too small (minimum is %{min_width}x%{min_height})

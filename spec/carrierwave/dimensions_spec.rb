@@ -33,7 +33,10 @@ RSpec.describe CarrierWave::Dimensions do
 
     it 'raises error' do
       expect { subject.store!(file) }
-        .to raise_error(CarrierWave::IntegrityError)
+        .to raise_error(
+          CarrierWave::IntegrityError,
+          /#{subject.max_dimensions[0]}|#{subject.max_dimensions[1]}/
+        )
     end
   end
 
@@ -42,7 +45,10 @@ RSpec.describe CarrierWave::Dimensions do
 
     it 'raises error' do
       expect { subject.store!(file) }
-        .to raise_error(CarrierWave::IntegrityError)
+        .to raise_error(
+          CarrierWave::IntegrityError,
+          /#{subject.min_dimensions[0]}|#{subject.min_dimensions[1]}/
+        )
     end
   end
 end
