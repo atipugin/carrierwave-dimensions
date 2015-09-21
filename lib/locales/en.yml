@@ -1,0 +1,5 @@
+en:
+  errors:
+    messages:
+      max_dimensions_error: Too large
+      min_dimensions_error: Too small

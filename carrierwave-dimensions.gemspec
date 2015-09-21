@@ -5,7 +5,7 @@ require 'carrierwave/dimensions/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "carrierwave-dimensions"
-  spec.version       = Carrierwave::Dimensions::VERSION
+  spec.version       = CarrierWave::Dimensions::VERSION
   spec.authors       = ["Alexander Tipugin"]
   spec.email         = ["atipugin@gmail.com"]
 
@@ -26,4 +26,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency 'rspec', '~> 3.3.0'
   spec.add_development_dependency 'rubocop', '~> 0.34.2'
+
+  spec.add_dependency 'activesupport', '>= 3.2'
+  spec.add_dependency 'fastimage'
+  spec.add_dependency 'carrierwave'
 end

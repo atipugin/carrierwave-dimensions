@@ -16,7 +16,16 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+require File.expand_path('../../lib/carrierwave/dimensions', __FILE__)
+Dir[File.expand_path('../support/**/*.rb', __FILE__)].each { |f| require f }
+
 RSpec.configure do |config|
+  config.include PathHelpers
+
+  config.after(:all) do
+    FileUtils.rm_rf(upload_path)
+  end
+
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
