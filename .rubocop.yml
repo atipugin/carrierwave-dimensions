@@ -1,6 +1,7 @@
 AllCops:
   Exclude:
     - spec/spec_helper.rb
+    - lib/carrierwave-dimensions.rb
 
 Style/Documentation:
   Enabled: false
